@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72B9244A2BE640C300B12157 /* DuoCatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B924492BE640C300B12157 /* DuoCatoApp.swift */; };
+		72B9244C2BE640C300B12157 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B9244B2BE640C300B12157 /* ContentView.swift */; };
+		72B9244E2BE640C500B12157 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B9244D2BE640C500B12157 /* Assets.xcassets */; };
+		72B924512BE640C500B12157 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B924502BE640C500B12157 /* Preview Assets.xcassets */; };
+		72B9245B2BE640C500B12157 /* DuoCatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B9245A2BE640C500B12157 /* DuoCatoTests.swift */; };
+		72B924652BE640C500B12157 /* DuoCatoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B924642BE640C500B12157 /* DuoCatoUITests.swift */; };
+		72B924672BE640C500B12157 /* DuoCatoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B924662BE640C500B12157 /* DuoCatoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		72B924572BE640C500B12157 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72B9243E2BE640C300B12157 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72B924452BE640C300B12157;
+			remoteInfo = DuoCato;
+		};
+		72B924612BE640C500B12157 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72B9243E2BE640C300B12157 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72B924452BE640C300B12157;
+			remoteInfo = DuoCato;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		72B924462BE640C300B12157 /* DuoCato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuoCato.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72B924492BE640C300B12157 /* DuoCatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoCatoApp.swift; sourceTree = "<group>"; };
+		72B9244B2BE640C300B12157 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		72B9244D2BE640C500B12157 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72B924502BE640C500B12157 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		72B924562BE640C500B12157 /* DuoCatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuoCatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72B9245A2BE640C500B12157 /* DuoCatoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoCatoTests.swift; sourceTree = "<group>"; };
+		72B924602BE640C500B12157 /* DuoCatoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuoCatoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72B924642BE640C500B12157 /* DuoCatoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoCatoUITests.swift; sourceTree = "<group>"; };
+		72B924662BE640C500B12157 /* DuoCatoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoCatoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72B924432BE640C300B12157 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72B924532BE640C500B12157 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72B9245D2BE640C500B12157 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72B9243D2BE640C300B12157 = {
+			isa = PBXGroup;
+			children = (
+				72B924482BE640C300B12157 /* DuoCato */,
+				72B924592BE640C500B12157 /* DuoCatoTests */,
+				72B924632BE640C500B12157 /* DuoCatoUITests */,
+				72B924472BE640C300B12157 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		72B924472BE640C300B12157 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72B924462BE640C300B12157 /* DuoCato.app */,
+				72B924562BE640C500B12157 /* DuoCatoTests.xctest */,
+				72B924602BE640C500B12157 /* DuoCatoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72B924482BE640C300B12157 /* DuoCato */ = {
+			isa = PBXGroup;
+			children = (
+				72B924492BE640C300B12157 /* DuoCatoApp.swift */,
+				72B9244B2BE640C300B12157 /* ContentView.swift */,
+				72B9244D2BE640C500B12157 /* Assets.xcassets */,
+				72B9244F2BE640C500B12157 /* Preview Content */,
+			);
+			path = DuoCato;
+			sourceTree = "<group>";
+		};
+		72B9244F2BE640C500B12157 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				72B924502BE640C500B12157 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		72B924592BE640C500B12157 /* DuoCatoTests */ = {
+			isa = PBXGroup;
+			children = (
+				72B9245A2BE640C500B12157 /* DuoCatoTests.swift */,
+			);
+			path = DuoCatoTests;
+			sourceTree = "<group>";
+		};
+		72B924632BE640C500B12157 /* DuoCatoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				72B924642BE640C500B12157 /* DuoCatoUITests.swift */,
+				72B924662BE640C500B12157 /* DuoCatoUITestsLaunchTests.swift */,
+			);
+			path = DuoCatoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72B924452BE640C300B12157 /* DuoCato */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72B9246A2BE640C500B12157 /* Build configuration list for PBXNativeTarget "DuoCato" */;
+			buildPhases = (
+				72B924422BE640C300B12157 /* Sources */,
+				72B924432BE640C300B12157 /* Frameworks */,
+				72B924442BE640C300B12157 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DuoCato;
+			productName = DuoCato;
+			productReference = 72B924462BE640C300B12157 /* DuoCato.app */;
+			productType = "com.apple.product-type.application";
+		};
+		72B924552BE640C500B12157 /* DuoCatoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72B9246D2BE640C500B12157 /* Build configuration list for PBXNativeTarget "DuoCatoTests" */;
+			buildPhases = (
+				72B924522BE640C500B12157 /* Sources */,
+				72B924532BE640C500B12157 /* Frameworks */,
+				72B924542BE640C500B12157 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72B924582BE640C500B12157 /* PBXTargetDependency */,
+			);
+			name = DuoCatoTests;
+			productName = DuoCatoTests;
+			productReference = 72B924562BE640C500B12157 /* DuoCatoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		72B9245F2BE640C500B12157 /* DuoCatoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72B924702BE640C500B12157 /* Build configuration list for PBXNativeTarget "DuoCatoUITests" */;
+			buildPhases = (
+				72B9245C2BE640C500B12157 /* Sources */,
+				72B9245D2BE640C500B12157 /* Frameworks */,
+				72B9245E2BE640C500B12157 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72B924622BE640C500B12157 /* PBXTargetDependency */,
+			);
+			name = DuoCatoUITests;
+			productName = DuoCatoUITests;
+			productReference = 72B924602BE640C500B12157 /* DuoCatoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72B9243E2BE640C300B12157 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					72B924452BE640C300B12157 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					72B924552BE640C500B12157 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 72B924452BE640C300B12157;
+					};
+					72B9245F2BE640C500B12157 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 72B924452BE640C300B12157;
+					};
+				};
+			};
+			buildConfigurationList = 72B924412BE640C300B12157 /* Build configuration list for PBXProject "DuoCato" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 72B9243D2BE640C300B12157;
+			productRefGroup = 72B924472BE640C300B12157 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72B924452BE640C300B12157 /* DuoCato */,
+				72B924552BE640C500B12157 /* DuoCatoTests */,
+				72B9245F2BE640C500B12157 /* DuoCatoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72B924442BE640C300B12157 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B924512BE640C500B12157 /* Preview Assets.xcassets in Resources */,
+				72B9244E2BE640C500B12157 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72B924542BE640C500B12157 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72B9245E2BE640C500B12157 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72B924422BE640C300B12157 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B9244C2BE640C300B12157 /* ContentView.swift in Sources */,
+				72B9244A2BE640C300B12157 /* DuoCatoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72B924522BE640C500B12157 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B9245B2BE640C500B12157 /* DuoCatoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72B9245C2BE640C500B12157 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B924672BE640C500B12157 /* DuoCatoUITestsLaunchTests.swift in Sources */,
+				72B924652BE640C500B12157 /* DuoCatoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72B924582BE640C500B12157 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72B924452BE640C300B12157 /* DuoCato */;
+			targetProxy = 72B924572BE640C500B12157 /* PBXContainerItemProxy */;
+		};
+		72B924622BE640C500B12157 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72B924452BE640C300B12157 /* DuoCato */;
+			targetProxy = 72B924612BE640C500B12157 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		72B924682BE640C500B12157 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		72B924692BE640C500B12157 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		72B9246B2BE640C500B12157 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DuoCato/Preview Content\"";
+				DEVELOPMENT_TEAM = M6293QPA8H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sinthonwilke.DuoCato;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		72B9246C2BE640C500B12157 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DuoCato/Preview Content\"";
+				DEVELOPMENT_TEAM = M6293QPA8H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sinthonwilke.DuoCato;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		72B9246E2BE640C500B12157 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6293QPA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sinthonwilke.DuoCatoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DuoCato.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DuoCato";
+			};
+			name = Debug;
+		};
+		72B9246F2BE640C500B12157 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6293QPA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sinthonwilke.DuoCatoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DuoCato.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DuoCato";
+			};
+			name = Release;
+		};
+		72B924712BE640C500B12157 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6293QPA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sinthonwilke.DuoCatoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DuoCato;
+			};
+			name = Debug;
+		};
+		72B924722BE640C500B12157 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6293QPA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sinthonwilke.DuoCatoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DuoCato;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72B924412BE640C300B12157 /* Build configuration list for PBXProject "DuoCato" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72B924682BE640C500B12157 /* Debug */,
+				72B924692BE640C500B12157 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72B9246A2BE640C500B12157 /* Build configuration list for PBXNativeTarget "DuoCato" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72B9246B2BE640C500B12157 /* Debug */,
+				72B9246C2BE640C500B12157 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72B9246D2BE640C500B12157 /* Build configuration list for PBXNativeTarget "DuoCatoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72B9246E2BE640C500B12157 /* Debug */,
+				72B9246F2BE640C500B12157 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72B924702BE640C500B12157 /* Build configuration list for PBXNativeTarget "DuoCatoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72B924712BE640C500B12157 /* Debug */,
+				72B924722BE640C500B12157 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72B9243E2BE640C300B12157 /* Project object */;
+}
