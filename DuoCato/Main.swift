@@ -1,21 +1,28 @@
-//
-//  Main.swift
-//  DuoCato
-//
-//  Created by Sinthon Wilke on 4/5/2567 BE.
-//
-
 import SwiftUI
 
 struct Main: View {
+    @AppStorage("user_theme") private var userTheme: Theme = .systemDefault
+    @State private var selectedMode: Mode? = nil
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack{
+            userTheme.getBackgroundColor
+                .ignoresSafeArea(.all)
+            
+            VStack {
+                HStack(spacing: 20) {
+                    ModeSelect(selectedMode: $selectedMode)
+                    ThemeSwitch()
+                }
+                Spacer()
+                Avatar()
+                Dialog()
+                Spacer()
+                Microphone()
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 50)
         }
-        .padding()
     }
 }
 

@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		723939892BE64B31005B9CE2 /* ThemeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723939882BE64B31005B9CE2 /* ThemeSwitch.swift */; };
+		7239398B2BE65755005B9CE2 /* ModeSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239398A2BE65755005B9CE2 /* ModeSelect.swift */; };
+		7239398D2BE65ACA005B9CE2 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239398C2BE65ACA005B9CE2 /* Avatar.swift */; };
+		7239398F2BE65C58005B9CE2 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239398E2BE65C58005B9CE2 /* Dialog.swift */; };
+		723939912BE65C8D005B9CE2 /* Microphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723939902BE65C8D005B9CE2 /* Microphone.swift */; };
 		72B9244A2BE640C300B12157 /* DuoCatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B924492BE640C300B12157 /* DuoCatoApp.swift */; };
-		72B9244C2BE640C300B12157 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B9244B2BE640C300B12157 /* ContentView.swift */; };
+		72B9244C2BE640C300B12157 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B9244B2BE640C300B12157 /* Main.swift */; };
 		72B9244E2BE640C500B12157 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B9244D2BE640C500B12157 /* Assets.xcassets */; };
 		72B924512BE640C500B12157 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B924502BE640C500B12157 /* Preview Assets.xcassets */; };
 		72B9245B2BE640C500B12157 /* DuoCatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B9245A2BE640C500B12157 /* DuoCatoTests.swift */; };
@@ -34,9 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		723939882BE64B31005B9CE2 /* ThemeSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwitch.swift; sourceTree = "<group>"; };
+		7239398A2BE65755005B9CE2 /* ModeSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelect.swift; sourceTree = "<group>"; };
+		7239398C2BE65ACA005B9CE2 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		7239398E2BE65C58005B9CE2 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
+		723939902BE65C8D005B9CE2 /* Microphone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Microphone.swift; sourceTree = "<group>"; };
 		72B924462BE640C300B12157 /* DuoCato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuoCato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B924492BE640C300B12157 /* DuoCatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoCatoApp.swift; sourceTree = "<group>"; };
-		72B9244B2BE640C300B12157 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		72B9244B2BE640C300B12157 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		72B9244D2BE640C500B12157 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72B924502BE640C500B12157 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		72B924562BE640C500B12157 /* DuoCatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuoCatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +81,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		723939872BE649F8005B9CE2 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				723939882BE64B31005B9CE2 /* ThemeSwitch.swift */,
+				7239398A2BE65755005B9CE2 /* ModeSelect.swift */,
+				7239398C2BE65ACA005B9CE2 /* Avatar.swift */,
+				7239398E2BE65C58005B9CE2 /* Dialog.swift */,
+				723939902BE65C8D005B9CE2 /* Microphone.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		72B9243D2BE640C300B12157 = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				72B924492BE640C300B12157 /* DuoCatoApp.swift */,
-				72B9244B2BE640C300B12157 /* ContentView.swift */,
+				72B9244B2BE640C300B12157 /* Main.swift */,
+				723939872BE649F8005B9CE2 /* Component */,
 				72B9244D2BE640C500B12157 /* Assets.xcassets */,
 				72B9244F2BE640C500B12157 /* Preview Content */,
 			);
@@ -257,7 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72B9244C2BE640C300B12157 /* ContentView.swift in Sources */,
+				7239398B2BE65755005B9CE2 /* ModeSelect.swift in Sources */,
+				723939892BE64B31005B9CE2 /* ThemeSwitch.swift in Sources */,
+				72B9244C2BE640C300B12157 /* Main.swift in Sources */,
+				7239398F2BE65C58005B9CE2 /* Dialog.swift in Sources */,
+				7239398D2BE65ACA005B9CE2 /* Avatar.swift in Sources */,
+				723939912BE65C8D005B9CE2 /* Microphone.swift in Sources */,
 				72B9244A2BE640C300B12157 /* DuoCatoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

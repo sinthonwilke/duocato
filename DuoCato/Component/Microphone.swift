@@ -1,15 +1,21 @@
-//
-//  Microphone.swift
-//  DuoCato
-//
-//  Created by Sinthon Wilke on 4/5/2567 BE.
-//
-
 import SwiftUI
 
 struct Microphone: View {
+    
+    func handleClick() {
+        
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            handleClick()
+        }) {
+            Image(systemName: "mic.circle.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+
+        }
+        .frame(width: 100)
     }
 }
 
