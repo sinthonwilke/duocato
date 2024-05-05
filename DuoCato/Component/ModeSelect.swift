@@ -15,7 +15,6 @@ struct ModeSelect: View {
                 }
             }
         }
-        .animation(.default)
         .background(userTheme.getSecondaryColor)
         .cornerRadius(10)
         .overlay( RoundedRectangle(cornerRadius: 10)

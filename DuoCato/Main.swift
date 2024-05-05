@@ -9,19 +9,17 @@ struct Main: View {
             userTheme.getBackgroundColor
                 .ignoresSafeArea(.all)
             
-            VStack {
+            VStack(spacing: 20) {
                 HStack(spacing: 20) {
                     ModeSelect(selectedMode: $selectedMode)
                     ThemeSwitch()
                 }
-                Spacer()
                 Avatar()
                 Dialog()
-                Spacer()
                 Microphone()
             }
             .padding(.horizontal, 20)
-            .padding(.vertical, 50)
+            .padding(.top, 10)
         }
     }
 }
