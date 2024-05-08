@@ -56,8 +56,7 @@ enum Theme: String, CaseIterable {
     private func getColorName(for theme: Theme) -> String {
         switch theme {
         case .systemDefault:
-            @Environment(\.colorScheme) var scheme
-            return scheme == .light ? "light" : "dark"
+            return self == .light ? "light" : "dark"
         case .light:
             return "light"
         case .dark:

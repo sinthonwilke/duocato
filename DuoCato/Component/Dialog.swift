@@ -2,25 +2,8 @@ import SwiftUI
 
 struct Dialog: View {
     @AppStorage("user_theme") private var userTheme: Theme = .systemDefault
-    @State private var newMessageText = ""
-    @State private var messages: [Message] = [
-        Message(text: "Hello!", isSentByUser: false),
-        Message(text: "Hi there!", isSentByUser: true),
-        Message(text: "Hi there!", isSentByUser: true),
-        Message(text: "Hi there!", isSentByUser: true),
-        Message(text: "Hi there!", isSentByUser: true),
-        Message(text: "Hi there!", isSentByUser: true),
-        Message(text: "Hi there!", isSentByUser: true),
-        Message(text: "Hi there!", isSentByUser: true),
-        Message(text: "Hi there!", isSentByUser: true),
-    ]
-    
-    func sendMessage() {
-        guard !newMessageText.isEmpty else { return }
-        let message = Message(text: newMessageText, isSentByUser: true)
-        messages.append(message)
-        newMessageText = ""
-    }
+    @Binding var messages: [Message]
+    @Binding var speechString: String
     
     var body: some View {
         VStack {
@@ -32,39 +15,22 @@ struct Dialog: View {
                             MessageView(message: message)
                                 .id(message.id)
                                 .padding(.top, index == 0 ? 30 : 0)
-                                .padding(.bottom, index == messages.count - 1 ? 30 : 0) // Add bottom padding only to the last message
+                                .padding(.bottom, index == messages.count - 1 ? 30 : 0)
                         }
-                        .onChange(of: messages.count) { _ in
+                        .onChange(of: messages.count) {
                             withAnimation {
                                 scrollView.scrollTo(messages.last?.id)
-                            }                        }
+                            }
+                        }
                     }
                 }
             }
             .overlay(
-                LinearGradient(
-                    gradient: Gradient(colors: [userTheme.getBackgroundColor, Color.clear]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 30),
-                alignment: .top)
+                LinearGradient( gradient: Gradient(colors: [userTheme.getBackgroundColor, Color.clear]), startPoint: .top, endPoint: .bottom )
+                    .frame(height: 30), alignment: .top)
             .overlay(
-                LinearGradient(
-                    gradient: Gradient(colors: [Color.clear, userTheme.getBackgroundColor]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 30)
-                , alignment: .bottom)
-//            HStack {
-//                TextField("Type a message...", text: $newMessageText)
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                
-//                Button(action: sendMessage) {
-//                    Text("Send")
-//                }
-//            }
+                LinearGradient( gradient: Gradient(colors: [Color.clear, userTheme.getBackgroundColor]), startPoint: .top, endPoint: .bottom )
+                    .frame(height: 30), alignment: .bottom)
         }
     }
 }
@@ -78,15 +44,20 @@ struct MessageView: View {
             if message.isSentByUser {
                 Spacer()
             }
-            
             Text(message.text)
                 .padding(10)
                 .foregroundColor(userTheme.getFontColor)
                 .background(message.isSentByUser ? userTheme.getPrimaryColor : userTheme.getSecondaryColor)
-                .cornerRadius(10)
+                .clipShape(
+                    .rect( topLeadingRadius: 20, bottomLeadingRadius: message.isSentByUser ? 20 : 0, bottomTrailingRadius: message.isSentByUser ? 0 : 20, topTrailingRadius: 20 )
+                )
+            if !message.isSentByUser {
+                Spacer()
+            }
         }
     }
 }
+
 
 struct Message: Identifiable, Hashable {
     let id = UUID()
