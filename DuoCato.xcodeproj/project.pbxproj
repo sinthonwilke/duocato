@@ -12,7 +12,7 @@
 		7239398D2BE65ACA005B9CE2 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239398C2BE65ACA005B9CE2 /* Avatar.swift */; };
 		7239398F2BE65C58005B9CE2 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239398E2BE65C58005B9CE2 /* Dialog.swift */; };
 		723939912BE65C8D005B9CE2 /* Microphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723939902BE65C8D005B9CE2 /* Microphone.swift */; };
-		72B03A822BE9435600B2D0CA /* SwiftUISpeechToText in Frameworks */ = {isa = PBXBuildFile; productRef = 72B03A812BE9435600B2D0CA /* SwiftUISpeechToText */; };
+		729CF5DF2BF0F33300CB8624 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729CF5DE2BF0F33200CB8624 /* TextToSpeech.swift */; };
 		72B9244A2BE640C300B12157 /* DuoCatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B924492BE640C300B12157 /* DuoCatoApp.swift */; };
 		72B9244C2BE640C300B12157 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B9244B2BE640C300B12157 /* Main.swift */; };
 		72B9244E2BE640C500B12157 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B9244D2BE640C500B12157 /* Assets.xcassets */; };
@@ -45,6 +45,7 @@
 		7239398C2BE65ACA005B9CE2 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		7239398E2BE65C58005B9CE2 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		723939902BE65C8D005B9CE2 /* Microphone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Microphone.swift; sourceTree = "<group>"; };
+		729CF5DE2BF0F33200CB8624 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		72B924462BE640C300B12157 /* DuoCato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuoCato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B924492BE640C300B12157 /* DuoCatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoCatoApp.swift; sourceTree = "<group>"; };
 		72B9244B2BE640C300B12157 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72B03A822BE9435600B2D0CA /* SwiftUISpeechToText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +120,7 @@
 			children = (
 				72B924492BE640C300B12157 /* DuoCatoApp.swift */,
 				72B9244B2BE640C300B12157 /* Main.swift */,
+				729CF5DE2BF0F33200CB8624 /* TextToSpeech.swift */,
 				723939872BE649F8005B9CE2 /* Component */,
 				72B9244D2BE640C500B12157 /* Assets.xcassets */,
 				72B9244F2BE640C500B12157 /* Preview Content */,
@@ -169,7 +170,6 @@
 			);
 			name = DuoCato;
 			packageProductDependencies = (
-				72B03A812BE9435600B2D0CA /* SwiftUISpeechToText */,
 			);
 			productName = DuoCato;
 			productReference = 72B924462BE640C300B12157 /* DuoCato.app */;
@@ -244,7 +244,6 @@
 			);
 			mainGroup = 72B9243D2BE640C300B12157;
 			packageReferences = (
-				72B03A802BE9435600B2D0CA /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */,
 			);
 			productRefGroup = 72B924472BE640C300B12157 /* Products */;
 			projectDirPath = "";
@@ -293,6 +292,7 @@
 				72B9244C2BE640C300B12157 /* Main.swift in Sources */,
 				7239398F2BE65C58005B9CE2 /* Dialog.swift in Sources */,
 				7239398D2BE65ACA005B9CE2 /* Avatar.swift in Sources */,
+				729CF5DF2BF0F33300CB8624 /* TextToSpeech.swift in Sources */,
 				723939912BE65C8D005B9CE2 /* Microphone.swift in Sources */,
 				72B9244A2BE640C300B12157 /* DuoCatoApp.swift in Sources */,
 			);
@@ -628,25 +628,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		72B03A802BE9435600B2D0CA /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pandashashwat97/SwiftUISpeechToText";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		72B03A812BE9435600B2D0CA /* SwiftUISpeechToText */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 72B03A802BE9435600B2D0CA /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */;
-			productName = SwiftUISpeechToText;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72B9243E2BE640C300B12157 /* Project object */;
 }

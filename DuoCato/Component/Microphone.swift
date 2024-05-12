@@ -3,6 +3,7 @@ import Foundation
 import AVFoundation
 import Speech
 import Foundation
+import Accelerate
 
 struct Microphone: View {
     @AppStorage("user_theme") private var userTheme: Theme = .systemDefault
@@ -30,29 +31,48 @@ struct Microphone: View {
             }
         }
         .sheet(isPresented: $isRecording) {
-            MicrophoneView(isRecording: self.$isRecording, searchText: self.$speechString)
-                .presentationDetents([.medium, .fraction(0.5)])
-                .presentationDragIndicator(.visible)
+            MicrophoneView(isRecording: self.$isRecording, searchText: self.$speechString, dismiss: {
+                self.isRecording = false
+            })
+            .presentationDetents([.medium, .fraction(0.5)])
+            .presentationDragIndicator(.visible)
         }
     }
 }
 
 
 struct MicrophoneView: View {
+    @AppStorage("user_theme") private var userTheme: Theme = .systemDefault
     @StateObject var speechRecognizer = SpeechRecognizer()
     @Binding var isRecording:Bool
     @Binding var searchText:String
+    var dismiss: () -> Void
+    
     var body: some View {
         VStack{
             Spacer()
             Text("\((isRecording == false) ? "":((speechRecognizer.transcript == "") ? "Speak Now": speechRecognizer.transcript))")
-                .frame(width: 300, height: 200, alignment: .center)
+                .foregroundColor(userTheme.getFontColor)
             Spacer()
             ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                .progressViewStyle(CircularProgressViewStyle(tint: userTheme.getFontColor))
                 .scaleEffect(2)
             Spacer()
+            Button(action: {
+                self.dismiss()
+            }) {
+                Text("Finish")
+                    .foregroundStyle(userTheme.getFontColor)
+                    .bold()
+                    .padding(20)
+            }
+            .background(userTheme.getSecondaryColor)
+            .frame(height: 60)
+            .cornerRadius(10)
         }
+        .padding(.bottom, 20)
+        .frame(maxWidth: .infinity)
+        .background(userTheme.getPrimaryColor)
         .onAppear{
             speechRecognizer.transcribe()
         }
@@ -62,6 +82,7 @@ struct MicrophoneView: View {
         }
     }
 }
+
 
 class SpeechRecognizer: ObservableObject {
     enum RecognizerError: Error {
@@ -110,7 +131,7 @@ class SpeechRecognizer: ObservableObject {
     deinit {
         reset()
     }
-    /// Reset the speech recognizer.
+    
     func reset() {
         task?.cancel()
         audioEngine?.stop()
@@ -118,12 +139,7 @@ class SpeechRecognizer: ObservableObject {
         request = nil
         task = nil
     }
-    /**
-     Begin transcribing audio.
-     
-     Creates a `SFSpeechRecognitionTask` that transcribes speech to text until you call `stopTranscribing()`.
-     The resulting transcription is continuously written to the published `transcript` property.
-     */
+    
     public func transcribe() {
         DispatchQueue(label: "Speech Recognizer Queue", qos: .userInteractive).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
