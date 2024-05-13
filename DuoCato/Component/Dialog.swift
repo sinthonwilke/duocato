@@ -17,6 +17,8 @@ struct Dialog: View {
                                     .id(message.id)
                                     .padding(.top, index == 0 ? 30 : 0)
                                     .padding(.bottom, index == messages.count - 1 ? 30 : 0)
+                                    .padding(.leading, message.isSentByUser ? 60 : 0)
+                                    .padding(.trailing, message.isSentByUser ? 0 : 60)
                             }
                             .onChange(of: messages.count) {
                                 withAnimation {
@@ -28,21 +30,21 @@ struct Dialog: View {
                 }
                 .frame(maxHeight: .infinity)
                 .overlay(
-                    LinearGradient(gradient: Gradient(colors: [userTheme.getBackgroundColor, Color.clear]), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [userTheme.getMain, Color.clear]), startPoint: .top, endPoint: .bottom)
                         .frame(height: 30), alignment: .top)
                 .overlay(
-                    LinearGradient(gradient: Gradient(colors: [Color.clear, userTheme.getBackgroundColor]), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [Color.clear, userTheme.getMain]), startPoint: .top, endPoint: .bottom)
                         .frame(height: 30), alignment: .bottom)
             } else {
                 VStack(spacing:20) {
                     Text("Start to talk with DuoCato!")
-                        .foregroundColor(userTheme.getFontColor)
+                        .foregroundColor(userTheme.getFont)
                         .bold()
                     Image(systemName: "arrowshape.down.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 30)
-                        .foregroundColor(userTheme.getFontColor)
+                        .foregroundColor(userTheme.getFont)
                 }
                 .frame(maxHeight: .infinity)
             }
@@ -61,8 +63,8 @@ struct MessageView: View {
             }
             Text(message.text)
                 .padding(10)
-                .foregroundColor(userTheme.getFontColor)
-                .background(message.isSentByUser ? userTheme.getPrimaryColor : userTheme.getSecondaryColor)
+                .foregroundColor(userTheme.getFont)
+                .background(message.isSentByUser ? userTheme.getUser : userTheme.getGPT)
                 .clipShape(
                     .rect( topLeadingRadius: 20, bottomLeadingRadius: message.isSentByUser ? 20 : 0, bottomTrailingRadius: message.isSentByUser ? 0 : 20, topTrailingRadius: 20 )
                 )

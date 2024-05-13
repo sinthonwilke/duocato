@@ -18,13 +18,13 @@ struct Microphone: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100)
-                    .foregroundStyle(userTheme.getFontColor)
+                    .foregroundStyle(userTheme.getFont)
                     .onTapGesture {
                         isRecording.toggle()
                     }
             } else {
                 ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: userTheme.getFontColor))
+                    .progressViewStyle(CircularProgressViewStyle(tint: userTheme.getFont))
                     .frame(width: 100, height: 100)
                     .controlSize(.large)
                     .scaleEffect(2.5)
@@ -52,27 +52,27 @@ struct MicrophoneView: View {
         VStack{
             Spacer()
             Text("\((isRecording == false) ? "":((speechRecognizer.transcript == "") ? "Speak Now": speechRecognizer.transcript))")
-                .foregroundColor(userTheme.getFontColor)
+                .foregroundColor(userTheme.getFont)
             Spacer()
             ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: userTheme.getFontColor))
+                .progressViewStyle(CircularProgressViewStyle(tint: userTheme.getFont))
                 .scaleEffect(2)
             Spacer()
             Button(action: {
                 self.dismiss()
             }) {
                 Text("Finish")
-                    .foregroundStyle(userTheme.getFontColor)
+                    .foregroundStyle(userTheme.getFont)
                     .bold()
                     .padding(20)
             }
-            .background(userTheme.getSecondaryColor)
+            .background(userTheme.getGPT)
             .frame(height: 60)
             .cornerRadius(10)
         }
         .padding(.bottom, 20)
         .frame(maxWidth: .infinity)
-        .background(userTheme.getPrimaryColor)
+        .background(userTheme.getMain)
         .onAppear{
             speechRecognizer.transcribe()
         }

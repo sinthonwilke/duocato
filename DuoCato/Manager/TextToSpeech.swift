@@ -17,13 +17,10 @@ class TextToSpeechManager: NSObject, AVSpeechSynthesizerDelegate {
             switch mode {
             case .easy:
                 utterance.pitchMultiplier = 2.0
-                utterance.rate = AVSpeechUtteranceDefaultSpeechRate
             case .medium:
                 utterance.pitchMultiplier = 1.5
-                utterance.rate = AVSpeechUtteranceDefaultSpeechRate * 1.05
             case .hard:
                 utterance.pitchMultiplier = 1.0
-                utterance.rate = AVSpeechUtteranceDefaultSpeechRate * 1.15
             }
         }
         synthesizer.speak(utterance)

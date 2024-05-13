@@ -15,10 +15,10 @@ struct ModeSelect: View {
                 }
             }
         }
-        .background(userTheme.getSecondaryColor)
+        .background(userTheme.getMain)
         .cornerRadius(10)
         .overlay( RoundedRectangle(cornerRadius: 10)
-            .stroke(userTheme.getPrimaryColor, lineWidth: 3)
+            .stroke(userTheme.getFont, lineWidth: 3)
         )
     }
 }
@@ -33,8 +33,8 @@ struct ModeButton: View {
         Button(action: action) {
             Text(mode.rawValue.capitalized)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
-                .background(isSelected ? userTheme.getPrimaryColor : Color.clear)
-                .foregroundStyle(userTheme.getFontColor)
+                .background(isSelected ? userTheme.getGPT: Color.clear)
+                .foregroundStyle(userTheme.getFont)
                 .bold()
         }
     }

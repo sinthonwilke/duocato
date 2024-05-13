@@ -6,7 +6,19 @@ struct Main: View {
     @State var speechString: String = ""
     @State var isUserTurn: Bool = true
     @State var isBotSpeaking: Bool = false
-    @State private var messages: [Message] = []
+    @State private var messages: [Message] = [
+        Message(text: "Hey there!", isSentByUser: true),
+        Message(text: "Hi! How can I help you?", isSentByUser: false),
+        Message(text: "I'm just looking for some assistance with a coding problem.", isSentByUser: true),
+        Message(text: "Sure, I'd be happy to help. What's the problem you're facing?", isSentByUser: false),
+        Message(text: "I'm trying to figure out how to implement a sorting algorithm in Swift.", isSentByUser: true),
+        Message(text: "Ah, sorting algorithms can be tricky. Which algorithm are you trying to implement?", isSentByUser: false),
+        Message(text: "I'm thinking of trying out quicksort, but I'm not sure where to start.", isSentByUser: true),
+        Message(text: "Quicksort is a great choice! Let me guide you through the steps.", isSentByUser: false),
+        Message(text: "Thanks! I appreciate your help.", isSentByUser: true),
+        Message(text: "No problem at all. Let's get started.", isSentByUser: false)
+    ]
+
     @ObservedObject var networkManager = NetworkManager()
     private var textToSpeechManager = TextToSpeechManager()
     
@@ -54,7 +66,7 @@ struct Main: View {
     var body: some View {
         if networkManager.isConnected {
             ZStack{
-                userTheme.getBackgroundColor
+                userTheme.getMain
                     .ignoresSafeArea(.all)
                 VStack(spacing: 20) {
                     HStack(spacing: 20) {
@@ -75,7 +87,7 @@ struct Main: View {
             }
         } else {
             ZStack{
-                userTheme.getBackgroundColor
+                userTheme.getMain
                     .ignoresSafeArea(.all)
                 VStack(spacing: 50) {
                     Image("catoSad")
@@ -86,9 +98,9 @@ struct Main: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(height: 50)
-                            .foregroundStyle(userTheme.getFontColor)
+                            .foregroundStyle(userTheme.getFont)
                         Text("No internet connection.")
-                            .foregroundColor(userTheme.getFontColor)
+                            .foregroundColor(userTheme.getFont)
                             .bold()
                         Spacer()
                     }

@@ -24,10 +24,10 @@ struct ThemeSwitch: View {
         }
         .foregroundColor(.yellow)
         .frame(width: 50, height: 50)
-        .background(userTheme.getSecondaryColor)
+        .background(userTheme.getMain)
         .cornerRadius(10)
         .overlay( RoundedRectangle(cornerRadius: 10)
-            .stroke(userTheme.getPrimaryColor, lineWidth: 3)
+            .stroke(userTheme.getFont, lineWidth: 3)
         )
     }
 }
@@ -37,20 +37,20 @@ enum Theme: String, CaseIterable {
     case light
     case dark
     
-    var getPrimaryColor: Color {
-        Color(getColorName(for: self) + "PrimaryColor")
+    var getMain: Color {
+        Color(getColorName(for: self) + "Main")
     }
     
-    var getSecondaryColor: Color {
-        Color(getColorName(for: self) + "SecondaryColor")
+    var getGPT: Color {
+        Color(getColorName(for: self) + "GPT")
     }
     
-    var getBackgroundColor: Color {
-        Color(getColorName(for: self) + "BackgroundColor")
+    var getUser: Color {
+        Color(getColorName(for: self) + "User")
     }
     
-    var getFontColor: Color {
-        Color(getColorName(for: self) + "FontColor")
+    var getFont: Color {
+        Color(getColorName(for: self) + "Font")
     }
     
     private func getColorName(for theme: Theme) -> String {
