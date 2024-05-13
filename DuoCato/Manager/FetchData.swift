@@ -1,13 +1,13 @@
 import Foundation
 
-func fetchData(from url: URL, method: String = "GET", requestBody: [String: Any]? = nil) async throws -> Any {
+func fetchData(from url: URL, method: String = "GET", requestBody: [[String: Any]]? = nil) async throws -> Any {
     let session = URLSession.shared
     var request = URLRequest(url: url)
     request.httpMethod = method
     
     if let body = requestBody {
         do {
-            let jsonData = try JSONSerialization.data(withJSONObject: body, options: [])
+            let jsonData = try JSONSerialization.data(withJSONObject: body, options: [.prettyPrinted])
             request.httpBody = jsonData
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         } catch {

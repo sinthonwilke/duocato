@@ -2,22 +2,12 @@ import SwiftUI
 
 struct Main: View {
     @AppStorage("user_theme") private var userTheme: Theme = .systemDefault
-    @State private var selectedMode: Mode? = .easy
+    @State private var selectedMode: Mode = .easy
     @State var speechString: String = ""
     @State var isUserTurn: Bool = true
     @State var isBotSpeaking: Bool = false
-    @State private var messages: [Message] = [
-        Message(text: "Hey there!", isSentByUser: true),
-        Message(text: "Hi! How can I help you?", isSentByUser: false),
-        Message(text: "I'm just looking for some assistance with a coding problem.", isSentByUser: true),
-        Message(text: "Sure, I'd be happy to help. What's the problem you're facing?", isSentByUser: false),
-        Message(text: "I'm trying to figure out how to implement a sorting algorithm in Swift.", isSentByUser: true),
-        Message(text: "Ah, sorting algorithms can be tricky. Which algorithm are you trying to implement?", isSentByUser: false),
-        Message(text: "I'm thinking of trying out quicksort, but I'm not sure where to start.", isSentByUser: true),
-        Message(text: "Quicksort is a great choice! Let me guide you through the steps.", isSentByUser: false),
-        Message(text: "Thanks! I appreciate your help.", isSentByUser: true),
-        Message(text: "No problem at all. Let's get started.", isSentByUser: false)
-    ]
+    @State private var messages: [Message] = []
+
 
     @ObservedObject var networkManager = NetworkManager()
     private var textToSpeechManager = TextToSpeechManager()
@@ -25,11 +15,11 @@ struct Main: View {
     func handleUserInput() {
         if (isUserTurn) {
             guard !speechString.isEmpty else { return }
-            let message = Message(text: speechString, isSentByUser: isUserTurn)
+            let message = Message(text: speechString, isSentByUser: isUserTurn, mode: selectedMode.rawValue)
             messages.append(message)
             isUserTurn.toggle()
             Task {
-                await handleBotResponse(text: message.text, mode: selectedMode!.getModeStr())
+                await handleBotResponse(text: message.text, mode: selectedMode.getModeStr())
             }
             speechString = ""
         }
@@ -38,19 +28,20 @@ struct Main: View {
     func handleBotResponse(text: String, mode: String) async {
         if (!isUserTurn) {
             do {
+                
+                let requestBody: [[String: Any]] = messages.map { message -> [String: Any] in
+                    return ["text": message.text, "isSentByUser": message.isSentByUser, "mode": message.mode]
+                }
                 let apiUrl = URL(string: "http://localhost:8000/")!
-                let requestBody = ["message": text, "mode": mode]
                 let json = try await fetchData(from: apiUrl, method: "POST", requestBody: requestBody)
                 guard let jsonDictionary = json as? [String: Any],
                       let message = jsonDictionary["message"] as? String else {
                     throw NSError(domain: "Invalid JSON format", code: 0, userInfo: nil)
                 }
-                
                 let newMessage = message
-                let messageObject = Message(text: newMessage, isSentByUser: false)
+                let messageObject = Message(text: newMessage, isSentByUser: false, mode: selectedMode.rawValue)
                 messages.append(messageObject)
                 self.isBotSpeaking = true
-                
                 textToSpeechManager.speak(messageObject.text, mode: selectedMode) {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.isUserTurn.toggle()

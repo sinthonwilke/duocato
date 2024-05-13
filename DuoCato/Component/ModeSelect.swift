@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ModeSelect: View {
     @AppStorage("user_theme") private var userTheme: Theme = .systemDefault
-    @Binding var selectedMode: Mode?
+    @Binding var selectedMode: Mode
 
     var body: some View {
         

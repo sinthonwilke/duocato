@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Avatar: View {
-    @Binding var selectedMode: Mode?
+    @Binding var selectedMode: Mode
     @Binding var isSpeaking: Bool
     @State private var isMouthOpen = false
     

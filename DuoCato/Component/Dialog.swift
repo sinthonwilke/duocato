@@ -79,4 +79,5 @@ struct Message: Identifiable, Hashable {
     let id = UUID()
     let text: String
     let isSentByUser: Bool
+    let mode: String
 }
