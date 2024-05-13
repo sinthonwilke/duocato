@@ -41,7 +41,7 @@ struct Main: View {
     }
     
     var body: some View {
-        if !networkManager.isConnected {
+        if networkManager.isConnected {
             ZStack{
                 userTheme.getBackgroundColor
                     .ignoresSafeArea(.all)
