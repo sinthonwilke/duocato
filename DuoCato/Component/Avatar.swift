@@ -19,9 +19,9 @@ struct Avatar: View {
                 Circle()
                     .fill(Color(#colorLiteral(red: 0.9450980425, green: 0.6078431606, blue: 0.6078431606, alpha: 1)))
                     .frame(height: 15)
-                    .offset(x: -45, y: -12)
+                    .offset(x: -40, y: -12)
                     .scaleEffect(isSpeaking ? (isMouthOpen ? 1.05 : 1.0) : 1.0)
-                    .animation(Animation.easeInOut(duration: 0.5).repeatForever())
+                    .animation(Animation.easeInOut(duration: 0.15).repeatForever())
             }
         }
         .onAppear {

@@ -6,12 +6,9 @@ struct Main: View {
     @State var speechString: String = ""
     @State var isUserTurn: Bool = true
     @State var isBotSpeaking: Bool = false
-    @State private var messages: [Message] = [Message(text: "Hello!", isSentByUser: false)]
+    @State private var messages: [Message] = []
     @ObservedObject var networkManager = NetworkManager()
     private var textToSpeechManager = TextToSpeechManager()
-    private var meowSpeech = [
-        "Hi",
-    ]
     
     func handleUserInput() {
         if (isUserTurn) {
@@ -19,23 +16,37 @@ struct Main: View {
             let message = Message(text: speechString, isSentByUser: isUserTurn)
             messages.append(message)
             isUserTurn.toggle()
+            Task {
+                await handleBotResponse(text: message.text)
+            }
             speechString = ""
         }
     }
     
-    func handleBotResponse() {
+    func handleBotResponse(text: String) async {
         if (!isUserTurn) {
-            if let randomMeow = meowSpeech.randomElement() {
-                let message = Message(text: randomMeow, isSentByUser: false)
-                messages.append(message)
+            do {
+                let apiUrl = URL(string: "http://localhost:8000/")!
+                let requestBody = ["message": text]
+                let json = try await fetchData(from: apiUrl, method: "POST", requestBody: requestBody)
+                guard let jsonDictionary = json as? [String: Any],
+                      let message = jsonDictionary["message"] as? String else {
+                    throw NSError(domain: "Invalid JSON format", code: 0, userInfo: nil)
+                }
                 
+                let newMessage = message
+                let messageObject = Message(text: newMessage, isSentByUser: false)
+                messages.append(messageObject)
                 self.isBotSpeaking = true
-                textToSpeechManager.speak(message.text, mode: selectedMode) {
+                
+                textToSpeechManager.speak(messageObject.text, mode: selectedMode) {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.isUserTurn.toggle()
                         self.isBotSpeaking = false
                     }
                 }
+            } catch {
+                print("Error: \(error)")
             }
         }
     }
@@ -62,21 +73,25 @@ struct Main: View {
                     handleUserInput()
                 }
             }
-            .onChange(of: isUserTurn) {
-                if (!isUserTurn) {
-                    handleBotResponse()
-                }
-            }
         } else {
             ZStack{
                 userTheme.getBackgroundColor
                     .ignoresSafeArea(.all)
-                VStack(spacing: 20) {
+                VStack(spacing: 50) {
                     Image("catoSad")
                         .cornerRadius(10)
-                    Text("No internet connection.")
-                        .foregroundColor(userTheme.getFontColor)
-                        .bold()
+                    HStack(spacing: 20) {
+                        Spacer()
+                        Image(systemName: "wifi.exclamationmark")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 50)
+                            .foregroundStyle(userTheme.getFontColor)
+                        Text("No internet connection.")
+                            .foregroundColor(userTheme.getFontColor)
+                            .bold()
+                        Spacer()
+                    }
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 10)
