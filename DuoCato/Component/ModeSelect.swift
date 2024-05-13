@@ -44,4 +44,8 @@ enum Mode: String, CaseIterable {
     case easy
     case medium
     case hard
+    
+    func getModeStr() -> String {
+        return self.rawValue
+    }
 }

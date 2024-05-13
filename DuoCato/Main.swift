@@ -17,17 +17,17 @@ struct Main: View {
             messages.append(message)
             isUserTurn.toggle()
             Task {
-                await handleBotResponse(text: message.text)
+                await handleBotResponse(text: message.text, mode: selectedMode!.getModeStr())
             }
             speechString = ""
         }
     }
     
-    func handleBotResponse(text: String) async {
+    func handleBotResponse(text: String, mode: String) async {
         if (!isUserTurn) {
             do {
                 let apiUrl = URL(string: "http://localhost:8000/")!
-                let requestBody = ["message": text]
+                let requestBody = ["message": text, "mode": mode]
                 let json = try await fetchData(from: apiUrl, method: "POST", requestBody: requestBody)
                 guard let jsonDictionary = json as? [String: Any],
                       let message = jsonDictionary["message"] as? String else {
